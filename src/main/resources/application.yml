@@ -1,0 +1,6 @@
+app:
+  desc: ${app.name} is a demo project to learn more about Spring Boot and Angular.
+
+spring:
+  profiles:
+    active: dev
