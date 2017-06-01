@@ -23,4 +23,9 @@ public class NewService {
     public String toString(){
         return null;
     }
+
+    public Exception throwException(){
+        Exception toThrow = new Exception();
+        return toThrow;
+    }
 }
