@@ -37,11 +37,38 @@
         </div>
     </nav>
 
-    <h2>Standard Error Handler</h2>
+    <h2>Error Handler</h2>
 
-    <p fm:text="${error}">error</p>
-    <p fm:text="${message}">message</p>
-
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Key</td>
+            <td>Value</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>TimeStamp</td>
+            <td fm:text="${timestamp}"></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td fm:text="${status}"></td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td fm:text="${message}"></td>
+        </tr>
+        <tr>
+            <td>Error</td>
+            <td fm:text="${error}"></td>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td fm:text="${path}"></td>
+        </tr>
+        </tbody>
+    </table>
 
 </div>
 
