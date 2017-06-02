@@ -16,6 +16,7 @@ public class Spending {
 
     // what got bought, what category (optional), when did it got payed
     private String article;
+    private Integer price;
     private String category;
     private String message;
     private Date payedAt;
@@ -36,6 +37,14 @@ public class Spending {
 
     public void setArticle(String article) {
         this.article = article;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public String getCategory() {
@@ -73,6 +82,6 @@ public class Spending {
 
     @Override
     public String toString() {
-        return "Spending [article=" + article + "]";
+        return "Spending [article=" + article + " was " + price + "]";
     }
 }

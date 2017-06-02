@@ -1,6 +1,6 @@
 package com.ubk.controller;
 
-import com.ubk.service.NewService;
+import com.ubk.service.SpendingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    private NewService newService;
+    private SpendingService spendingService;
 
     @Autowired
-    public HomeController(NewService newService) {
-        this.newService = newService;
+    public HomeController(SpendingService spendingService) {
+        this.spendingService = spendingService;
     }
 
     @Value("${app.name}")
@@ -32,7 +32,7 @@ public class HomeController {
 
     @RequestMapping("/service")
     public String callService(){
-        return newService.giveSomething();
+        return spendingService.getLatestSpending().toString();
     }
 
 
