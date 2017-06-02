@@ -1,6 +1,7 @@
 package com.ubk.domain;
 
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -12,44 +13,66 @@ public class Spending {
     @Id
     @GeneratedValue
     private Long id;
-    private String title;
-    private String body;
-    private Date postedOn;
-    // author
 
-    private Spending() {
+    // what got bought, what category (optional), when did it got payed
+    private String article;
+    private String category;
+    private String message;
+    private Date payedAt;
+
+    @ManyToOne
+    private Payer payer;
+
+    @SuppressWarnings("unused")
+    private Spending() { }
+
+    public Spending(String article) {
+        this.article = article;
     }
 
-    public Spending(String title) {
-        this.title = title;
+    public String getArticle() {
+        return article;
     }
 
-    public String getTitle() {
-        return title;
+    public void setArticle(String article) {
+        this.article = article;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getCategory() {
+        return category;
     }
 
-    public String getBody() {
-        return body;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public String getMessage() {
+        return message;
     }
 
-    public String getPostedOn() {
-        return postedOn;
+    public void setMessage(String message) {
+        this.message = message;
+
     }
 
-    public void setPostedOn(String postedOn) {
-        this.postedOn = postedOn;
+    public Date getPayedAt() {
+        return payedAt;
+    }
+
+    public void setPayedAt(Date payedAt) {
+        this.payedAt = payedAt;
+    }
+
+    public Payer getPayer() {
+        return payer;
+    }
+
+    public void setPayer(Payer payer) {
+        this.payer = payer;
     }
 
     @Override
     public String toString() {
-        return "Spending [title=" + title + "]";
+        return "Spending [article=" + article + "]";
     }
 }

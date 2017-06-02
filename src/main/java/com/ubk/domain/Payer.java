@@ -1,40 +1,46 @@
 package com.ubk.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
+
 /**
  * Created by isc-muk on 6/1/17.
  */
 @Entity
 public class Payer {
 
+    @Id
+    @GeneratedValue
     private Long id;
-    private String firstName;
-    private String lastName;
+
+    private String Name;
 
     //posts
+    @OneToMany(mappedBy = "payer")
+    private List<Spending> spendings;
 
     private Payer(){
 
     }
 
-    public Payer(String first, String last) {
-        this.setFirstName(first);
-        this.setLastName(last);
+    public Payer(String first) {
+        this.setName(first);
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.Name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    @Override
+    public String toString() {
+        return "Payer [Name=" + Name +"]";
     }
 }
 
