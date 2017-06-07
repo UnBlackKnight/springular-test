@@ -1,8 +1,11 @@
 package com.ubk.controller;
 
-import com.ubk.service.SpendingService;
+import com.ubk.service.MoneyMovementService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,28 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    private SpendingService spendingService;
+    private MoneyMovementService moneyMovementService;
 
     @Autowired
-    public HomeController(SpendingService spendingService) {
-        this.spendingService = spendingService;
+    public HomeController(MoneyMovementService moneyMovementService) {
+        this.moneyMovementService = moneyMovementService;
     }
-
-    @Value("${app.name}")
-    private String appName;
-
-    @Value("${app.desc}")
-    private String appDesc;
 
     @RequestMapping("/")
-    public String home(){
-        return appDesc;
+    public String home(Model model){
+        model.addAttribute("moneyMovement", moneyMovementService.getLatestSpending());
+        return "index";
     }
-
-    @RequestMapping("/service")
-    public String callService(){
-        return spendingService.getLatestSpending().toString();
-    }
-
 
 }
