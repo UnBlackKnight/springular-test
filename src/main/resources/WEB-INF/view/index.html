@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fm="http://www.freemarker.org"
       layout:decorator="layouts/main">
 <head>
-    <title>The Real Dan Vega - Home Page</title>
+    <title>Blog Home Page</title>
 </head>
 <body>
 
@@ -18,16 +20,13 @@
 
     <article>
         <header>
-            <h2 fm:text="${post.title}">title</h2>
-            <p fm:text="${#calendars.format(post.postedOn, 'M/dd/yyyy hh:mm:ss a')}">postedOn</p>
+            <h2 fm:text="${moneyMovement.article}">Artikel</h2>
+            <p fm:text="${#calendars.format(moneyMovement.payedAt, 'M/dd/yyyy hh:mm:ss a')}">Bezahlt am</p>
         </header>
-        <section fm:utext="${post.teaser}">
-            teaser
-        </section>
+        <section fm:utext="${moneyMovement.price}">Preis</section>
         <footer>
-            <a fm:href="|@{/posts/view/}${post.slug}|">Read More</a>
             <address>
-                Posted By <a fm:href="|mailto:${post.author.email}|"> <span fm:text="|${post.author.firstName} ${post.author.lastName}|">author</span></a>
+                Bezahlt von <span fm:text="${moneyMovement.payer.name}">payer</span></a>
             </address>
         </footer>
         <hr/>
