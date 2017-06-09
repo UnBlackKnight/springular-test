@@ -1,6 +1,7 @@
 package com.ubk.domain;
 
 import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,7 +26,18 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<MoneyMovement> moneyMovements;
 
-    private Category (){}
+    private Category() {
+    }
 
-    public Category(String title) { this.title = title;}
+    public Category(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

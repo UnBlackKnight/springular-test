@@ -4,6 +4,7 @@ import com.ubk.domain.MoneyMovement;
 import com.ubk.repository.MoneyMovementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 /**
@@ -19,11 +20,11 @@ public class MoneyMovementService {
         this.moneyMovementRepository = moneyMovementRepository;
     }
 
-    public MoneyMovement getLatestSpending(){
+    public MoneyMovement getLatestSpending() {
         return moneyMovementRepository.findFirstByOrderByPayedAtDesc();
     }
 
-    public List<MoneyMovement> list(){
+    public List<MoneyMovement> list() {
         return moneyMovementRepository.findAllByOrderByPayedAtDesc();
     }
 

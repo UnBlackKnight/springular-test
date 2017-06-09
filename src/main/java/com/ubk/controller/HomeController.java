@@ -20,7 +20,7 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String home(Model model){
+    public String home(Model model) {
         model.addAttribute("moneyMovement", moneyMovementService.getLatestSpending());
         return "index";
     }

@@ -1,63 +1,63 @@
 <!DOCTYPE html>
-<html lang="en"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:fm="http://www.freemarker.org">
+<html xmlns:fm="http://www.freemarker.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>The Real Dan Vega</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>The Real Dan Vega</title>
 
-	<link rel="stylesheet" href="../static/css/style.css" fm:href="@{/css/blog.css}"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" fm:href="@{/css/blog.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
-	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'/>
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
-	<div class="container">
+<div class="container">
 
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">My Blog</a>
-				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="" fm:class="${controllerName == 'Home'} ? 'dropdown active' : 'dropdown'"><a href="/">Home</a></li>
-						<li class="dropdown" fm:class="${controllerName == 'MoneyMovement'} ? 'dropdown active' : 'dropdown'">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Money Movements <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="/moneyMovement/list">List</a></li>
-							</ul>
-						</li>
-						<li class="dropdown" fm:class="${controllerName == 'Page'} ? 'dropdown active' : 'dropdown'">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Payers <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="/payer/list">List</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">My Blog</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="" fm:class="${controllerName == 'Home'} ? 'dropdown active' : 'dropdown'"><a href="/">Home</a></li>
+                    <li class="dropdown" fm:class="${controllerName == 'MoneyMovement'} ? 'dropdown active' : 'dropdown'">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Money Movements <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/moneyMovement/list">List</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" fm:class="${controllerName == 'Page'} ? 'dropdown active' : 'dropdown'">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Payers <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/payer/list">List</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-		<div layout:fragment="content">
-		</div>
+    <div layout:fragment="content">
+    </div>
 
-		<footer>
-			<p>Copyright TheRealDanVega 2015</p>
-		</footer>
+    <footer>
+        <p>Copyright TheRealDanVega 2015</p>
+    </footer>
 
-	</div>
+</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

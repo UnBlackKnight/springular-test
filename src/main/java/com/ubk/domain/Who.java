@@ -1,6 +1,7 @@
 package com.ubk.domain;
 
 import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,9 +26,24 @@ public class Who {
     @OneToMany(mappedBy = "who")
     private List<MoneyMovement> moneyMovements;
 
-    private Who(){ }
+    private Who() {
+    }
 
-    public Who(String first) { this.setName(first);}
+    public Who(String first) {
+        this.setName(first);
+    }
 
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Who{" + "id=" + id + ", Name='" + Name + '}';
+    }
 }
 

@@ -25,32 +25,32 @@ public class MoneyMovementController {
         this.moneyMovementService = moneyMovementService;
     }
 
-    @RequestMapping( value = "/", method = RequestMethod.GET)
-    public Iterable<MoneyMovement> list(){
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public Iterable<MoneyMovement> list() {
         return moneyMovementService.list();
     }
 
-    @RequestMapping( value = "/", method = RequestMethod.POST)
-    public MoneyMovement create(@RequestBody MoneyMovement moneyMovement){
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public MoneyMovement create(@RequestBody MoneyMovement moneyMovement) {
         return moneyMovementService.create(moneyMovement);
     }
 
-    @RequestMapping( value = "/{id}", method = RequestMethod.GET)
-    public MoneyMovement read(@PathVariable(value="id") Long id){
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public MoneyMovement read(@PathVariable(value = "id") Long id) {
         MoneyMovement moneyMovement = moneyMovementService.read(id);
-        if (moneyMovement == null){
+        if (moneyMovement == null) {
             throw new EntryNotFoundException("MoneyMovement with id: " + id + " not found.");
         }
         return moneyMovementService.read(id);
     }
 
-    @RequestMapping( value = "/{id}", method = RequestMethod.PUT)
-    public String update(@PathVariable(value="id") Long id){
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public String update(@PathVariable(value = "id") Long id) {
         return moneyMovementService.update(id);
     }
 
-    @RequestMapping( value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable(value="id") Long id){
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable(value = "id") Long id) {
         moneyMovementService.delete(id);
     }
 

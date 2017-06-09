@@ -10,7 +10,7 @@ import java.util.List;
  * Created by isc-muk on 6/1/17.
  */
 @Repository
-public interface MoneyMovementRepository extends CrudRepository<MoneyMovement, Long> {
+public interface MoneyMovementRepository extends CrudRepository<MoneyMovement,Long> {
 
     MoneyMovement findFirstByOrderByPayedAtDesc();
 
